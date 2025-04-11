@@ -85,7 +85,7 @@ namespace SpeedType
         /// </remarks>
         private void StartGame()
         {
-            SentenceProvider sp = new SentenceProvider;
+            SentenceProvider sp = new SentenceProvider();
             string sentence = sp.GetRandomSentence();
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Type This Sentence:[/]");
