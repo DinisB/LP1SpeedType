@@ -156,12 +156,7 @@ namespace SpeedType
             {
                 if (gameStats[i] == null)
                 {
-                    table.AddRow(
-                        i.ToString(),
-                        gameStats[i].WPM.ToString(),
-                        gameStats[i].Accuracy.ToString(),
-                        gameStats[i].TimeTaken.ToString("F2")
-                    );
+                    break;
                 }
 
                 // Add row to table
