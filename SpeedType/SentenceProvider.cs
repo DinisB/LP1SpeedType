@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Humanizer;
 
 namespace SpeedType
 {
@@ -28,9 +25,8 @@ namespace SpeedType
         /// </remarks>
         public SentenceProvider()
         {
-            string textos = "sentences.txt";
-            Random rand = new Random();
-
+            random = new Random();
+            
             string directoryPath = Path.GetFullPath(
                 Path.Combine(
                     AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"
@@ -40,9 +36,17 @@ namespace SpeedType
 
             if (File.Exists(filePath))
             {
-                foreach (string line in File.ReadLines(textos))
+                StreamReader sr = File.OpenText(filePath);
+                int countLines = sr.ReadToEnd().Split("\n").Length;
+                sr.Close();
+                sr = File.OpenText(filePath);
+                sentences = new string[countLines];
+                string s;
+                int index = 0;
+                while ((s = sr.ReadLine()) != null)
                 {
-                    sentences.Append(line);
+                    sentences[index] = s;
+                    index++;
                 }
             }
             else
@@ -61,8 +65,7 @@ namespace SpeedType
         /// </returns>
         public string GetRandomSentence()
         {
-            Random rand = new Random();
-            int n = rand.Next(0, sentences.Count() + 1);
+            int n = random.Next(0, sentences.Count() + 1);
             string sentence = sentences[n];
             return sentence;
         }

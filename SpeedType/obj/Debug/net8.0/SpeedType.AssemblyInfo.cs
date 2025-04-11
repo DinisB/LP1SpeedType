@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpeedType")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+befd049dbba766144e0ffb582c0028541a2e413e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f8b1a7e70caded17e251cd4a9a43bd1cab4e21b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpeedType")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpeedType")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

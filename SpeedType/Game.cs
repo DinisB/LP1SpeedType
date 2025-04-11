@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using Humanizer;
 using Spectre.Console;
 
 namespace SpeedType
@@ -88,7 +89,7 @@ namespace SpeedType
         private void StartGame()
         {
             SentenceProvider sp = new SentenceProvider();
-            string sentence = sp.GetRandomSentence();
+            string sentence = sp.GetRandomSentence().Humanize();
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Type This Sentence:[/]");
             AnsiConsole.MarkupLine($"[italic yellow]{sentence}[/]");
