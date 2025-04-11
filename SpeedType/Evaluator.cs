@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace SpeedType
 {
@@ -25,7 +26,10 @@ namespace SpeedType
         /// </remarks>
         public double CalculateWPM(string userInput, double timeTaken)
         {
-            int wordsTyped = // ////////// => TO IMPLEMENT <= //////////// //
+            int wordsTyped = 0;
+            foreach (string word in userInput.Split()){
+                wordsTyped++;
+            }
             return (wordsTyped / timeTaken) * 60;
         }
 

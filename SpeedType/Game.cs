@@ -85,17 +85,8 @@ namespace SpeedType
         /// </remarks>
         private void StartGame()
         {
-            // The sentence that will be presented to the player.
-            string textos = "sentences.txt";
-            List<string> sentences = new List<string>();
-            foreach (string line in File.ReadLines(textos))
-            {
-                sentences.Add(line);
-            }
-            Random rand = new Random();
-            int n = rand.Next(0, sentences.Count + 1);
-            string sentence = sentences[n];
-
+            SentenceProvider sp = new SentenceProvider;
+            string sentence = sp.GetRandomSentence();
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Type This Sentence:[/]");
             AnsiConsole.MarkupLine($"[italic yellow]{sentence}[/]");
