@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using Spectre.Console;
 
 namespace SpeedType
@@ -85,7 +86,15 @@ namespace SpeedType
         private void StartGame()
         {
             // The sentence that will be presented to the player.
-            string sentence = // ////////// => TO IMPLEMENT <= //////////// //
+            string textos = "sentences.txt";
+            List<string> sentences = new List<string>();
+            foreach (string line in File.ReadLines(textos))
+            {
+                sentences.Add(line);
+            }
+            Random rand = new Random();
+            int n = rand.Next(0, sentences.Count + 1);
+            string sentence = sentences[n];
 
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Type This Sentence:[/]");
